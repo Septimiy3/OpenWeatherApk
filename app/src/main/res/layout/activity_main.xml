@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Введите город в которым вы хотите узнать погоду"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+    <Button
+        android:id="@+id/btn_current_weather"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Хочу узнать погоду"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_change_city"
+        />
+
+    <EditText
+        android:id="@+id/et_change_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Введите город"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label"
+        android:layout_marginTop="10dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/txt_weather_in_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Погода в городе : "
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_current_weather" />
+    <TextView
+        android:id="@+id/txt_current_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/txt_city"
+        app:layout_constraintTop_toTopOf="@id/txt_city"
+        android:layout_marginLeft="20dp"
+        android:hint="40"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/txt_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/txt_weather_in_city"
+        app:layout_constraintTop_toTopOf="@id/txt_weather_in_city"
+        android:layout_marginLeft="20dp"
+        android:hint="Irkutsk"
+        android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/txt_current_weather"
+        app:layout_constraintTop_toTopOf="@id/txt_current_weather"
+        android:layout_marginLeft="5dp"
+        android:text="градусов"/>
+
+    <Button
+        android:id="@+id/btn_current_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_weather_in_city"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="40dp"
+        android:text="Узнать погоду по текущему местоположению"/>
+
+    <Button
+        android:id="@+id/btn_current_coordinate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_current_location"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/txt_weather_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Погода в городе : "
+        app:layout_constraintBottom_toTopOf="@id/btn_current_coordinate"
+        app:layout_constraintLeft_toRightOf="@id/btn_current_coordinate"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/txt_city_name_coordinate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:hint="Moscow"
+        app:layout_constraintLeft_toRightOf="@id/txt_weather_location"
+        app:layout_constraintTop_toBottomOf="@+id/btn_current_location"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/txt_city_weather_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/btn_current_coordinate"
+        app:layout_constraintLeft_toRightOf="@id/txt_city_name_coordinate"
+        android:layout_marginLeft="5dp"
+        android:hint="40"
+        android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/btn_current_coordinate"
+        app:layout_constraintLeft_toRightOf="@id/txt_city_weather_location"
+
+        android:layout_marginLeft="5dp"
+        android:text="градусов"
+        />
+    <TextView
+        android:id="@+id/current_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_current_coordinate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="30dp"
+        android:textSize="21sp"/>
+
+    <ListView
+        android:id="@+id/lift_forecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/current_day"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
